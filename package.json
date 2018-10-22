@@ -1,0 +1,32 @@
+{
+  "name": "nextjs-toolkit",
+  "version": "0.1.0",
+  "description": "HOCs and Utilities for zeit/next.js caching and lazy loading",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/sourcesense/nextjs-toolkit.git"
+  },
+  "keywords": [
+    "next",
+    "next.js",
+    "react",
+    "cache",
+    "lazyload",
+    "lazy",
+    "load",
+    "edge",
+    "side",
+    "includes",
+    "esi"
+  ],
+  "author": "sourcesense",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sourcesense/nextjs-toolkit/issues"
+  },
+  "homepage": "https://github.com/sourcesense/nextjs-toolkit#readme"
+}

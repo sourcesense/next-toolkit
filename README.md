@@ -1,12 +1,14 @@
 # Toolkit for Next.js
 
-A set of HOCs useful to develop in [Next.js](https://github.com/zeit/next.js)
+HOCs and Utilities for [zeit/next.js](https://github.com/zeit/next.js) caching and lazy loading
 
 Available HOCS
 
 - Edge Side Include
+- Lazy Edge
 - Lazy Page
-- Page
+- Edge
+- ApiConnect utility
 
 ## How to use
 
@@ -21,3 +23,7 @@ npm install nextjs-toolkit --save
 - import wrapped components in `/pages` and export them as default
 
 see examples.
+
+## Contacts
+
+[nextjs community chat on spectrum](https://spectrum.chat/next-js)
