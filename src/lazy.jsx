@@ -24,7 +24,7 @@ export default function withLoader(Loader) {
       }
 
       static getDerivedStateFromProps(props, state) {
-        if (props.asPath && state.asPath && props.asPath !== state.asPath) {
+        if (props.context && props.context.asPath && state.asPath && props.context.asPath !== state.asPath) {
           return {
             readyClientSide: false,
           };
@@ -45,6 +45,7 @@ export default function withLoader(Loader) {
             this.setState({
               ...initialProps,
               readyClientSide: true,
+              asPath: context.asPath,
             }); // recupero le props e le pusho nello state
           });
         }

@@ -84,7 +84,8 @@ function withLoader(Loader) {
             var context = _this.props.context;
             WrappedComponent.getInitialProps(context).then(function (initialProps) {
               _this.setState(_objectSpread({}, initialProps, {
-                readyClientSide: true
+                readyClientSide: true,
+                asPath: context.asPath
               })); // recupero le props e le pusho nello state
 
             });
@@ -131,7 +132,7 @@ function withLoader(Loader) {
       }], [{
         key: "getDerivedStateFromProps",
         value: function getDerivedStateFromProps(props, state) {
-          if (props.asPath && state.asPath && props.asPath !== state.asPath) {
+          if (props.context && props.context.asPath && state.asPath && props.context.asPath !== state.asPath) {
             return {
               readyClientSide: false
             };
