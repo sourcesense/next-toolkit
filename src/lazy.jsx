@@ -11,20 +11,19 @@ export default function withLoader(Loader) {
 
       componentDidMount() {
         if (!this.ready()) {
-          console.debug('PageWithLoader componentDidMount');
           this.loadData();
         }
       }
 
       componentDidUpdate() {
         if (!this.ready()) {
-          console.debug('PageWithLoader componentDidUpdate');
           this.loadData();
         }
       }
 
       static getDerivedStateFromProps(props, state) {
-        if (props.context && props.context.asPath && state.asPath && props.context.asPath !== state.asPath) {
+        const { context } = props;
+        if (context && context.asPath && state.asPath && context.asPath !== state.asPath) {
           return {
             readyClientSide: false,
           };
@@ -56,6 +55,9 @@ export default function withLoader(Loader) {
         const { readyClientSide, ...childState } = this.state;
         if (!this.ready() && Loader) {
           return <Loader />;
+        }
+        if (!this.ready() && !Loader) {
+          return null;
         }
         return <WrappedComponent {...childProps} {...childState} />;
       }
