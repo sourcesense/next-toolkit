@@ -4,22 +4,28 @@
   "description": "HOCs and Utilities for zeit/next.js caching and lazy loading",
   "author": "sourcesense",
   "license": "MIT",
-  "main": "index.js",
+  "main": "dist",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "del dist/* && babel src -d dist"
   },
   "dependencies": {
     "hoist-non-react-statics": "^3.0.1"
   },
   "devDependencies": {
+    "@babel/cli": "^7.1.2",
     "@babel/core": "^7.1.2",
     "@babel/plugin-proposal-class-properties": "^7.1.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
+    "@babel/preset-env": "^7.1.0",
     "babel-eslint": "^10.0.1",
+    "del-cli": "^1.1.0",
     "eslint": "^5.7.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jsx-a11y": "^6.1.2",
     "eslint-plugin-react": "^7.11.1",
+    "next": "^7.0.2",
     "prettier": "^1.14.3",
     "prop-types": "^15.6.2",
     "react": "^16.5.2",
@@ -31,7 +37,8 @@
     "prop-types": "^15.6.2",
     "next": "~6"
   },
-  "contributors": [{
+  "contributors": [
+    {
       "name": "Paolo Mariotti",
       "url": "https://github.com/mjhost"
     },
