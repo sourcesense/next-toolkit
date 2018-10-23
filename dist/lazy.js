@@ -74,8 +74,8 @@ function withLoader(Loader) {
         });
 
         _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "ready", function () {
-          var readyServerSide = _this.state.readyServerSide;
-          var readyClientSide = _this.props.readyClientSide;
+          var readyServerSide = _this.props.readyServerSide;
+          var readyClientSide = _this.state.readyClientSide;
           return readyServerSide || readyClientSide;
         });
 

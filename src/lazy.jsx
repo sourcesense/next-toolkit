@@ -33,8 +33,8 @@ export default function withLoader(Loader) {
       }
 
       ready = () => {
-        const { readyServerSide } = this.state;
-        const { readyClientSide } = this.props;
+        const { readyServerSide } = this.props;
+        const { readyClientSide } = this.state;
         return readyServerSide || readyClientSide;
       };
 
