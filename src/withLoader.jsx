@@ -8,6 +8,9 @@ const NullLoader = () => (null);
 
 export default function withLoader(Loader = NullLoader) {
   return function addLoader(WrappedComponent) {
+    if (!WrappedComponent.getInitialProps) {
+      return WrappedComponent;
+    }
     class PageWithLoader extends React.Component {
       state = { readyClientSide: false };
 
