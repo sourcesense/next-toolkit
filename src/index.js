@@ -1,4 +1,4 @@
 /* eslint-disable import/prefer-default-export */
-import lazy from './lazy';
+import withLoader from './withLoader';
 
-export { lazy };
+export { withLoader };

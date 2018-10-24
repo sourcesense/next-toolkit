@@ -4,8 +4,10 @@ import hoistNonReactStatic from 'hoist-non-react-statics';
 
 import { getDisplayName } from './utils';
 
-export default function withLoader(Loader) {
-  return function wrap(WrappedComponent) {
+const NullLoader = () => (null);
+
+export default function withLoader(Loader = NullLoader) {
+  return function addLoader(WrappedComponent) {
     class PageWithLoader extends React.Component {
       state = { readyClientSide: false };
 
@@ -53,11 +55,8 @@ export default function withLoader(Loader) {
       render() {
         const { readyServerSide, context, ...childProps } = this.props;
         const { readyClientSide, ...childState } = this.state;
-        if (!this.ready() && Loader) {
+        if (!this.ready()) {
           return <Loader />;
-        }
-        if (!this.ready() && !Loader) {
-          return null;
         }
         return <WrappedComponent {...childProps} {...childState} />;
       }

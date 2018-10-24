@@ -5,9 +5,9 @@ HOCs and Utilities for [zeit/next.js](https://github.com/zeit/next.js) caching a
 Available HOCS
 
 - Edge Side Include
-- Lazy Edge
-- Lazy Page
+- Edge with Loader (on the client side)
 - Edge
+- Page with Loader (on the client side)
 - ApiConnect utility
 
 ## How to use
