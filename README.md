@@ -15,7 +15,7 @@ Available HOCS
 Install:
 
 ```bash
-npm install nextjs-toolkit --save
+npm install next-toolkit --save
 ```
 
 - Create components outside `/pages`

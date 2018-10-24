@@ -5,8 +5,15 @@
   "author": "sourcesense",
   "license": "MIT",
   "main": "dist",
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint ./src",
+    "prepublishOnly": "npm run test",
+    "pretest": "npm run lint && npm run build",
+    "test": "npm run testOnly",
+    "testOnly": "jest \\.test.js --coverage",
     "build": "del dist/* && babel src -d dist"
   },
   "dependencies": {
@@ -25,6 +32,7 @@
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jsx-a11y": "^6.1.2",
     "eslint-plugin-react": "^7.11.1",
+    "jest": "^23.6.0",
     "next": "^7.0.2",
     "prettier": "^1.14.3",
     "prop-types": "^15.6.2",
