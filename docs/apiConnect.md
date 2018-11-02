@@ -11,7 +11,7 @@ export default function Component(props) {
   return <div><!-- whatever --></div>;
 }
 
-export const ConnectedComponent = apiConnect(async (context) => {
+export const ConnectedComponent = apiConnect(async function getInitialProps(context){
   // const initialProps = fetch(...).then(resp => resp.json())
   return initialProps;
 })(Component);
