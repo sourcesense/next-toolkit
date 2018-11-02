@@ -7,7 +7,7 @@ All these components can be used separately or together to create a composable s
 - Edge with Loader on the client side only **(not available yet)**
 - Edge Side Include **(not available yet)**
 - Edge **(not available yet)**
-- [ApiConnect utility](./doc/apiConnect.md)
+- [ApiConnect utility](./docs/apiConnect.md)
 
 ## How to use
 
