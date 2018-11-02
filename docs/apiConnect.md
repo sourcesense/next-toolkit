@@ -2,6 +2,21 @@
 
 HOC that connects a Component to next page architecture attaching an async function as a getInitialProps. Returns a react component that wraps the original component and can be used as a page in a next application
 
+## Usage
+
+```jsx
+import { apiConnect } from 'next-toolkit';
+
+export default function Component(props) {
+  return <div><!-- whatever --></div>;
+}
+
+export const ConnectedComponent = apiConnect(async (context) => {
+  // const initialProps = fetch(...).then(resp => resp.json())
+  return initialProps;
+})(Component);
+```
+
 ## Reasoning
 
 In a [standard nextjs application](https://github.com/zeit/next.js/wiki/Global-styles-and-layouts) you have the following structure
@@ -38,16 +53,3 @@ export default ConnectedComponent;
 The Component can be used either in composition given the needed props or as a page using the exported Connected version.
 
 Actually the `ConnectedComponent` part of the implementation looks like a wonderful HOC use case.
-
-```jsx
-import { apiConnect } from 'next-toolkit';
-
-export default function Component(props) {
-  return <div><!-- whatever --></div>;
-}
-
-export const ConnectedComponent = apiConnect(async (context) => {
-  // const initialProps = fetch(...).then(resp => resp.json())
-  return initialProps;
-})(Component);
-```
