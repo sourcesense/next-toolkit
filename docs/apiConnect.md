@@ -48,6 +48,17 @@ export class ConnectedComponent() {
 // /pages/whatever-route.js
 import { ConnectedComponent } from '../components/Component';
 export default ConnectedComponent;
+
+// /components/AnotherComponent.jsx
+import { Component } from '../components/Component';
+export function AnotherComponent(props) {
+  return (
+    <div>
+      blah blah blah
+      <Component {...props.subset} />
+    </div>
+  )
+}
 ```
 
 The Component can be used either in composition given the needed props or as a page using the exported Connected version.
