@@ -1,7 +1,5 @@
 # Toolkit for Next.js
 
-
-
 Easy to use universal HOCs and Utilities for [Next.js](https://github.com/zeit/next.js) to manage page loading, [Edge Side Includes](https://en.wikipedia.org/wiki/Edge_Side_Includes) and `getInitialProps`. \
 All these components can be used separately or together to create a composable structure.
 
@@ -9,8 +7,7 @@ All these components can be used separately or together to create a composable s
 - Edge with Loader on the client side only **(not available yet)**
 - Edge Side Include **(not available yet)**
 - Edge **(not available yet)**
-- ApiConnect utility **(not available yet)**
-
+- [ApiConnect utility](./doc/apiConnect.md)
 
 ## How to use
 
@@ -20,36 +17,31 @@ Install:
 npm install next-toolkit --save
 ```
 
-
-
 ### Page with Loader
+
 In your page file
 
 ```javascript
-import React from 'react'
-import { withLoader } from 'next-toolkit'
+import React from 'react';
+import { withLoader } from 'next-toolkit';
 
 export class Page extends React.Component {
   static async getInitialProps(ctx) {
-
     await new Promise((resolve) => setTimeout(() => resolve(), 3000));
-        /** this promise above is only to performe the example */
+    /** this promise above is only to performe the example */
   }
 
-  render(){
-      return (<div>Hello World!</div>)
+  render() {
+    return <div>Hello World!</div>;
   }
 }
 
+const Loader = () => <div>Loading</div>;
 
-const Loader = ()=>(<div>Loading</div>)
-
-export default withLoader(Loader)(Page)
-
+export default withLoader(Loader)(Page);
 ```
 
 This file is used both on server and client side. On the server side the `Loader` component will **never** be rendered.
-
 
 ##### Related links
 
