@@ -1,6 +1,6 @@
 {
   "name": "next-toolkit",
-  "version": "1.0.0-alpha.1",
+  "version": "1.0.1-alpha.1",
   "description": "HOCs and Utilities for zeit/next.js caching and lazy loading",
   "author": "sourcesense",
   "license": "MIT",
