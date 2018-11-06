@@ -14,7 +14,7 @@ export default function includeEdgeSide(WrappedComponent) {
     }
 
     componentDidMount() {
-      const { path } = this.state;
+      const { path } = this.props;
       if (!global.window[path]) {
         this.loadData();
       } else {
@@ -40,9 +40,7 @@ export default function includeEdgeSide(WrappedComponent) {
     }
 
     render() {
-      const { path } = this.state;
-      const { serverSideRendered } = this.props;
-
+      const { path, serverSideRendered } = this.props;
       if (serverSideRendered && !global.window) {
         return React.createElement('esi:include', { src: path });
       }
@@ -54,7 +52,6 @@ export default function includeEdgeSide(WrappedComponent) {
           </div>
         );
       }
-      console.log('EdgeSideIncluded render');
       return <WrappedComponent {...this.props} {...this.state} />;
     }
   }
